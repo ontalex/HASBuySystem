@@ -48,7 +48,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Авторизация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // inputLogin
             // 
@@ -74,6 +73,7 @@
             this.btnSignIn.TabIndex = 3;
             this.btnSignIn.Text = "Войти";
             this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // logo
             // 
@@ -85,7 +85,6 @@
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 4;
             this.logo.TabStop = false;
-            //this.logo.Click += new System.EventHandler(this.logo_Click);
             // 
             // inputPassword
             // 
@@ -140,7 +139,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            //this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
