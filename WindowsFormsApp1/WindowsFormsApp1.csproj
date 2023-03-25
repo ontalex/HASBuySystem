@@ -52,8 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DB.cs" />
-    <Compile Include="DBDataSet.Designer.cs">
+    <Compile Include="Resources\DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBDataSet.xsd</DependentUpon>
@@ -88,15 +87,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DBDataSet.xsc">
+    <None Include="Resources\DBDataSet.xsc">
       <DependentUpon>DBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DBDataSet.xsd">
+    <None Include="Resources\DBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DBDataSet.xss">
+    <None Include="Resources\DBDataSet.xss">
       <DependentUpon>DBDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -116,9 +115,12 @@
     <None Include="Resources\image 1 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB.mdb">
+    <Content Include="Resources\DB.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Формы\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

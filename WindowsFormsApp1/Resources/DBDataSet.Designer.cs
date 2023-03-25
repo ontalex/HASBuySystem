@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace WindowsFormsApp1 {
+namespace WindowsFormsApp1.Resources {
     
     
     /// <summary>
@@ -4029,7 +4029,7 @@ namespace WindowsFormsApp1 {
         }
     }
 }
-namespace WindowsFormsApp1.DBDataSetTableAdapters {
+namespace WindowsFormsApp1.Resources.DBDataSetTableAdapters {
     
     
     /// <summary>
