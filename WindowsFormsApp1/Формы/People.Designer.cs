@@ -178,24 +178,28 @@
             this.поставщикиToolStripMenuItem.Name = "поставщикиToolStripMenuItem";
             this.поставщикиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.поставщикиToolStripMenuItem.Text = "Поставщики";
+            this.поставщикиToolStripMenuItem.Click += new System.EventHandler(this.поставщикиToolStripMenuItem_Click);
             // 
             // производителиToolStripMenuItem
             // 
             this.производителиToolStripMenuItem.Name = "производителиToolStripMenuItem";
             this.производителиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.производителиToolStripMenuItem.Text = "Производители";
+            this.производителиToolStripMenuItem.Click += new System.EventHandler(this.производителиToolStripMenuItem_Click);
             // 
             // поставкиToolStripMenuItem
             // 
             this.поставкиToolStripMenuItem.Name = "поставкиToolStripMenuItem";
             this.поставкиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.поставкиToolStripMenuItem.Text = "Поставки";
+            this.поставкиToolStripMenuItem.Click += new System.EventHandler(this.поставкиToolStripMenuItem_Click);
             // 
             // товарыToolStripMenuItem
             // 
             this.товарыToolStripMenuItem.Name = "товарыToolStripMenuItem";
             this.товарыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.товарыToolStripMenuItem.Text = "Товары";
+            this.товарыToolStripMenuItem.Click += new System.EventHandler(this.товарыToolStripMenuItem_Click);
             // 
             // panelAdminPeople
             // 

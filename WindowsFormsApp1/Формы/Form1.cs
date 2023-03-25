@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
         {
             string usr = inputLogin.Text;
             string psw = inputPassword.Text;
-            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=C:\Users\AlexB\source\repos\WindowsFormsApp1\WindowsFormsApp1\DB.mdb");
+            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=C:\Users\AlexB\source\repos\WindowsFormsApp1\WindowsFormsApp1\Resources\DB.mdb");
             cmd = new OleDbCommand();
             con.Open();
             cmd.Connection = con;
@@ -46,7 +46,6 @@ namespace WindowsFormsApp1
 
                 if (dt.Rows[0][0].ToString().ToLower() == "администратор")
                 {
-                    MessageBox.Show("Вы - Админимстратор");
                     winAP.Show();
                 }
                 if (dt.Rows[0][0].ToString().ToLower() == "кассир")
