@@ -50,5 +50,15 @@ namespace WindowsFormsApp1.Формы
             this.Hide();
             new Manufacturers().Show();
         }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
