@@ -35,10 +35,11 @@
             this.поставкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableBox = new System.Windows.Forms.DataGridView();
-            this.add = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button_reload = new System.Windows.Forms.Button();
+            this.button_download = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableBox)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +51,7 @@
             this.таблицыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1481, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1481, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,7 +63,7 @@
             this.поставкиToolStripMenuItem,
             this.сотрудникиToolStripMenuItem});
             this.таблицыToolStripMenuItem.Name = "таблицыToolStripMenuItem";
-            this.таблицыToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
+            this.таблицыToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.таблицыToolStripMenuItem.Text = "Таблицы";
             // 
             // поставщикиToolStripMenuItem
@@ -102,37 +103,10 @@
             this.tableBox.Location = new System.Drawing.Point(13, 33);
             this.tableBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableBox.Name = "tableBox";
-            this.tableBox.ReadOnly = true;
             this.tableBox.RowHeadersWidth = 51;
             this.tableBox.RowTemplate.Height = 24;
             this.tableBox.Size = new System.Drawing.Size(1036, 656);
             this.tableBox.TabIndex = 2;
-            // 
-            // add
-            // 
-            this.add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
-            this.add.Font = new System.Drawing.Font("Arial", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.add.Location = new System.Drawing.Point(1057, 563);
-            this.add.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(411, 58);
-            this.add.TabIndex = 3;
-            this.add.Text = "Добавить";
-            this.add.UseVisualStyleBackColor = false;
-            this.add.Click += new System.EventHandler(this.add_Click);
-            // 
-            // delete
-            // 
-            this.delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
-            this.delete.Font = new System.Drawing.Font("Arial", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.delete.Location = new System.Drawing.Point(1057, 631);
-            this.delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(411, 58);
-            this.delete.TabIndex = 4;
-            this.delete.Text = "Удалить";
-            this.delete.UseVisualStyleBackColor = false;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // label3
             // 
@@ -145,18 +119,57 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Товары";
             // 
-            // button_reload
+            // button_download
             // 
-            this.button_reload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
-            this.button_reload.Font = new System.Drawing.Font("Arial", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_reload.Location = new System.Drawing.Point(1057, 495);
-            this.button_reload.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button_reload.Name = "button_reload";
-            this.button_reload.Size = new System.Drawing.Size(411, 58);
-            this.button_reload.TabIndex = 11;
-            this.button_reload.Text = "Обновить";
-            this.button_reload.UseVisualStyleBackColor = false;
-            this.button_reload.Click += new System.EventHandler(this.button_reload_Click);
+            this.button_download.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
+            this.button_download.Font = new System.Drawing.Font("Arial", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_download.Location = new System.Drawing.Point(1075, 426);
+            this.button_download.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_download.Name = "button_download";
+            this.button_download.Size = new System.Drawing.Size(393, 58);
+            this.button_download.TabIndex = 27;
+            this.button_download.Text = "Загрузить";
+            this.button_download.UseVisualStyleBackColor = false;
+            this.button_download.Click += new System.EventHandler(this.button_download_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
+            this.button1.Font = new System.Drawing.Font("Arial", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(1075, 494);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(393, 58);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Обновить";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button_reload_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
+            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(1075, 562);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(393, 58);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Добавить";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.add_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
+            this.button3.Font = new System.Drawing.Font("Arial", 12.8F);
+            this.button3.Location = new System.Drawing.Point(1075, 630);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(393, 58);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "Удалить";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.delete_Click);
             // 
             // ProductsWin
             // 
@@ -164,10 +177,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1481, 703);
-            this.Controls.Add(this.button_reload);
+            this.Controls.Add(this.button_download);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.add);
-            this.Controls.Add(this.delete);
             this.Controls.Add(this.tableBox);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -191,9 +205,10 @@
         private System.Windows.Forms.ToolStripMenuItem поставкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem;
         private System.Windows.Forms.DataGridView tableBox;
-        private System.Windows.Forms.Button add;
-        private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button_reload;
+        private System.Windows.Forms.Button button_download;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -19,6 +19,8 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+
+
         private void delete_Click(object sender, EventArgs e)
         {
             // Проверка на колличество выбранных строк
@@ -197,6 +199,8 @@ namespace WindowsFormsApp1
             reader.Close();
             con.Close();
         }
+
+
 
         private void товарыToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -13,32 +13,194 @@ namespace WindowsFormsApp1.Формы
 {
     public partial class ProductsWin : Form
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=C:\Users\AlexB\source\repos\WindowsFormsApp1\WindowsFormsApp1\Resources\DB.mdb");
-        string str = "SELECT * FROM Товары";
-
         AdminPeople adminPeople = new AdminPeople();
 
         public ProductsWin()
         {
             InitializeComponent();
-
-            OleDbDataAdapter dataAdapter = new OleDbDataAdapter(str, con);
-
-            DataSet ds = new DataSet();
-
-            dataAdapter.Fill(ds, "Товары");
-            tableBox.DataSource = ds.Tables[0].DefaultView;
-        }
-
-        private void add_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void delete_Click(object sender, EventArgs e)
         {
+            // Проверка на колличество выбранных строк
+            if (tableBox.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Выберите одну сторку!", "Внимание!");
+                return;
+            }
 
+            int index = tableBox.SelectedRows[0].Index;
+
+            if (
+                tableBox.Rows[index].Cells[0].Value == null
+            )
+            {
+                MessageBox.Show("Не все данных введены!", "Внимание!");
+                return;
+            }
+
+            // Счиываем данные
+            string id = tableBox.Rows[index].Cells[0].Value.ToString();
+
+            // Соединение
+            string conString = @"Provider=Microsoft.ACE.Oledb.12.0;Data Source=C:\Users\AlexB\source\repos\WindowsFormsApp1\WindowsFormsApp1\Resources\DB.mdb";
+            OleDbConnection con = new OleDbConnection(conString);
+
+            // Запрос к БД
+            con.Open();
+            string str = $"DELETE FROM Товары WHERE id_товар = {id}";
+            OleDbCommand cmd = new OleDbCommand(str, con);
+
+
+            // Выполняем запрос
+            if (cmd.ExecuteNonQuery() != 1)
+            {
+                MessageBox.Show("Ошибка ваполнения запроса!", "Ошибка!");
+            }
+            else
+            {
+                MessageBox.Show("Данные удалены!", "Внимание!");
+                // Удаляем данные из таблицы на стороне клиента
+                tableBox.Rows.RemoveAt(index);
+            }
+
+            con.Close();
         }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            // Проверка на колличество выбранных строк
+            if (tableBox.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Выберите одну сторку!", "Внимание!");
+                return;
+            }
+
+            int index = tableBox.SelectedRows[0].Index;
+
+            if (
+                tableBox.Rows[index].Cells[0].Value == null ||
+                tableBox.Rows[index].Cells[1].Value == null ||
+                tableBox.Rows[index].Cells[2].Value == null ||
+                tableBox.Rows[index].Cells[3].Value == null
+            )
+            {
+                MessageBox.Show("Не все данных введены!", "Внимание!");
+                return;
+            }
+
+            // Счиываем данные
+            string id = tableBox.Rows[index].Cells[0].Value.ToString();
+            string id_suplier = tableBox.Rows[index].Cells[1].Value.ToString();
+            string name = tableBox.Rows[index].Cells[2].Value.ToString();
+            string cost = tableBox.Rows[index].Cells[3].Value.ToString();
+
+            // Соединение
+            string conString = @"Provider=Microsoft.ACE.Oledb.12.0;Data Source=C:\Users\AlexB\source\repos\WindowsFormsApp1\WindowsFormsApp1\Resources\DB.mdb";
+            OleDbConnection con = new OleDbConnection(conString);
+
+            // Запрос к БД
+            con.Open();
+            string str = $"INSERT INTO Товары VALUES ({id}, {id_suplier}, '{name}', {cost})";
+            OleDbCommand cmd = new OleDbCommand(str, con);
+
+            // Выполняем запрос
+            if (cmd.ExecuteNonQuery() != 1)
+            {
+                MessageBox.Show("Ошибка ваполнения запроса!", "Ошибка!");
+            }
+            else
+            {
+                MessageBox.Show("Данные добавлены!", "Внимание!");
+            }
+
+            con.Close();
+        }
+
+        private void button_reload_Click(object sender, EventArgs e)
+        {
+            // Проверка на колличество выбранных строк
+            if (tableBox.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Выберите одну сторку!", "Внимание!");
+                return;
+            }
+
+            int index = tableBox.SelectedRows[0].Index;
+
+            if (
+                tableBox.Rows[index].Cells[0].Value == null ||
+                tableBox.Rows[index].Cells[1].Value == null ||
+                tableBox.Rows[index].Cells[2].Value == null ||
+                tableBox.Rows[index].Cells[3].Value == null
+            )
+            {
+                MessageBox.Show("Не все данных введены!", "Внимание!");
+                return;
+            }
+
+            // Счиываем данные
+            string id = tableBox.Rows[index].Cells[0].Value.ToString();
+            string id_suplier = tableBox.Rows[index].Cells[1].Value.ToString();
+            string name = tableBox.Rows[index].Cells[2].Value.ToString();
+            string cost = tableBox.Rows[index].Cells[3].Value.ToString();
+
+            // Соединение
+            string conString = @"Provider=Microsoft.ACE.Oledb.12.0;Data Source=C:\Users\AlexB\source\repos\WindowsFormsApp1\WindowsFormsApp1\Resources\DB.mdb";
+            OleDbConnection con = new OleDbConnection(conString);
+
+            // Запрос к БД
+            con.Open();
+            string str = $"UPDATE Товары SET Имя='{name}', id_поставка={id_suplier}, Стоимость={cost} WHERE id_товар = {id}";
+            OleDbCommand cmd = new OleDbCommand(str, con);
+
+
+            // Выполняем запрос
+            if (cmd.ExecuteNonQuery() != 1)
+            {
+                MessageBox.Show("Ошибка ваполнения запроса!", "Ошибка!");
+            }
+            else
+            {
+                MessageBox.Show("Данные изменены!", "Внимание!");
+            }
+
+            con.Close();
+        }
+
+        private void button_download_Click(object sender, EventArgs e)
+        {
+            // Соединение
+            string conString = @"Provider=Microsoft.ACE.Oledb.12.0;Data Source=C:\Users\AlexB\source\repos\WindowsFormsApp1\WindowsFormsApp1\Resources\DB.mdb";
+            OleDbConnection con = new OleDbConnection(conString);
+
+            // Запрос к БД
+            con.Open();
+            string str = "SELECT * FROM Товары";
+            OleDbCommand cmd = new OleDbCommand(str, con);
+            OleDbDataReader reader = cmd.ExecuteReader(); // Read data
+
+            OleDbDataAdapter dataAdapter = new OleDbDataAdapter(str, con);
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds, "товары");
+
+            // Проверяем данные
+            if (reader.HasRows == false)
+            {
+                MessageBox.Show("Данные не найдены", "Ошибка!");
+            }
+            else
+            {
+                while (reader.Read())
+                {
+                    tableBox.DataSource = ds.Tables[0].DefaultView;
+                }
+            }
+
+            reader.Close();
+            con.Close();
+        }
+
 
         private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -62,11 +224,6 @@ namespace WindowsFormsApp1.Формы
         {
             this.Hide();
             new Manufacturers().Show();
-        }
-
-        private void button_reload_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
