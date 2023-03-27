@@ -38,8 +38,9 @@
             this.поставкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.товарыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAdminPeople = new System.Windows.Forms.Panel();
-            this.add = new System.Windows.Forms.Button();
+            this.button_download = new System.Windows.Forms.Button();
             this.button_reload = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panelAdminPeople.SuspendLayout();
@@ -65,7 +66,6 @@
             this.tableBox.Location = new System.Drawing.Point(0, 0);
             this.tableBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableBox.Name = "tableBox";
-            this.tableBox.ReadOnly = true;
             this.tableBox.RowHeadersWidth = 51;
             this.tableBox.RowTemplate.Height = 24;
             this.tableBox.Size = new System.Drawing.Size(936, 563);
@@ -81,7 +81,7 @@
             this.delete.TabIndex = 5;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = false;
-            this.delete.Click += new System.EventHandler(this.add_Click);
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // menuStrip1
             // 
@@ -135,6 +135,7 @@
             // 
             // panelAdminPeople
             // 
+            this.panelAdminPeople.Controls.Add(this.button_download);
             this.panelAdminPeople.Controls.Add(this.button_reload);
             this.panelAdminPeople.Controls.Add(this.add);
             this.panelAdminPeople.Controls.Add(this.delete);
@@ -145,16 +146,18 @@
             this.panelAdminPeople.Size = new System.Drawing.Size(1407, 565);
             this.panelAdminPeople.TabIndex = 12;
             // 
-            // add
+            // button_download
             // 
-            this.add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
-            this.add.Location = new System.Drawing.Point(965, 434);
-            this.add.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(438, 58);
-            this.add.TabIndex = 4;
-            this.add.Text = "Добавить";
-            this.add.UseVisualStyleBackColor = false;
+            this.button_download.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
+            this.button_download.Font = new System.Drawing.Font("Arial", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_download.Location = new System.Drawing.Point(965, 298);
+            this.button_download.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_download.Name = "button_download";
+            this.button_download.Size = new System.Drawing.Size(438, 58);
+            this.button_download.TabIndex = 13;
+            this.button_download.Text = "Загрузить";
+            this.button_download.UseVisualStyleBackColor = false;
+            this.button_download.Click += new System.EventHandler(this.button_download_Click);
             // 
             // button_reload
             // 
@@ -167,6 +170,19 @@
             this.button_reload.TabIndex = 12;
             this.button_reload.Text = "Обновить";
             this.button_reload.UseVisualStyleBackColor = false;
+            this.button_reload.Click += new System.EventHandler(this.button_reload_Click);
+            // 
+            // add
+            // 
+            this.add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
+            this.add.Location = new System.Drawing.Point(965, 434);
+            this.add.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(438, 58);
+            this.add.TabIndex = 4;
+            this.add.Text = "Добавить";
+            this.add.UseVisualStyleBackColor = false;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // AdminPeople
             // 
@@ -207,5 +223,6 @@
         private System.Windows.Forms.Panel panelAdminPeople;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button button_reload;
+        private System.Windows.Forms.Button button_download;
     }
 }
