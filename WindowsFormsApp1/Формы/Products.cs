@@ -32,9 +32,7 @@ namespace WindowsFormsApp1.Формы
 
         private void add_Click(object sender, EventArgs e)
         {
-            // Очистка форм
-            inputName.Text = string.Empty;
-            inputCost.Text = string.Empty;
+            
         }
 
         private void delete_Click(object sender, EventArgs e)
@@ -64,6 +62,11 @@ namespace WindowsFormsApp1.Формы
         {
             this.Hide();
             new Manufacturers().Show();
+        }
+
+        private void button_reload_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

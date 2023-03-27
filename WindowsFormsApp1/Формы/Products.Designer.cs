@@ -156,6 +156,7 @@
             this.button_reload.TabIndex = 11;
             this.button_reload.Text = "Обновить";
             this.button_reload.UseVisualStyleBackColor = false;
+            this.button_reload.Click += new System.EventHandler(this.button_reload_Click);
             // 
             // ProductsWin
             // 
