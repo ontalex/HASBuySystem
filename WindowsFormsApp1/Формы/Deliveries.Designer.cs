@@ -44,6 +44,7 @@
             this.производителиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.товарыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_reload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -211,12 +212,25 @@
             this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
             this.сотрудникиToolStripMenuItem.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem_Click);
             // 
+            // button_reload
+            // 
+            this.button_reload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
+            this.button_reload.Font = new System.Drawing.Font("Arial", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_reload.Location = new System.Drawing.Point(1080, 498);
+            this.button_reload.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_reload.Name = "button_reload";
+            this.button_reload.Size = new System.Drawing.Size(389, 58);
+            this.button_reload.TabIndex = 20;
+            this.button_reload.Text = "Обновить";
+            this.button_reload.UseVisualStyleBackColor = false;
+            // 
             // Deliveries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1482, 706);
+            this.Controls.Add(this.button_reload);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
@@ -258,5 +272,6 @@
         private System.Windows.Forms.ToolStripMenuItem производителиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem товарыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem;
+        private System.Windows.Forms.Button button_reload;
     }
 }

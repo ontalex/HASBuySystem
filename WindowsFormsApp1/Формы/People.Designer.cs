@@ -45,6 +45,7 @@
             this.товарыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAdminPeople = new System.Windows.Forms.Panel();
             this.add = new System.Windows.Forms.Button();
+            this.button_reload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panelAdminPeople.SuspendLayout();
@@ -176,33 +177,34 @@
             // поставщикиToolStripMenuItem
             // 
             this.поставщикиToolStripMenuItem.Name = "поставщикиToolStripMenuItem";
-            this.поставщикиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.поставщикиToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.поставщикиToolStripMenuItem.Text = "Поставщики";
             this.поставщикиToolStripMenuItem.Click += new System.EventHandler(this.поставщикиToolStripMenuItem_Click);
             // 
             // производителиToolStripMenuItem
             // 
             this.производителиToolStripMenuItem.Name = "производителиToolStripMenuItem";
-            this.производителиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.производителиToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.производителиToolStripMenuItem.Text = "Производители";
             this.производителиToolStripMenuItem.Click += new System.EventHandler(this.производителиToolStripMenuItem_Click);
             // 
             // поставкиToolStripMenuItem
             // 
             this.поставкиToolStripMenuItem.Name = "поставкиToolStripMenuItem";
-            this.поставкиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.поставкиToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.поставкиToolStripMenuItem.Text = "Поставки";
             this.поставкиToolStripMenuItem.Click += new System.EventHandler(this.поставкиToolStripMenuItem_Click);
             // 
             // товарыToolStripMenuItem
             // 
             this.товарыToolStripMenuItem.Name = "товарыToolStripMenuItem";
-            this.товарыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.товарыToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.товарыToolStripMenuItem.Text = "Товары";
             this.товарыToolStripMenuItem.Click += new System.EventHandler(this.товарыToolStripMenuItem_Click);
             // 
             // panelAdminPeople
             // 
+            this.panelAdminPeople.Controls.Add(this.button_reload);
             this.panelAdminPeople.Controls.Add(this.add);
             this.panelAdminPeople.Controls.Add(this.delete);
             this.panelAdminPeople.Controls.Add(this.label1);
@@ -228,6 +230,18 @@
             this.add.TabIndex = 4;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = false;
+            // 
+            // button_reload
+            // 
+            this.button_reload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
+            this.button_reload.Font = new System.Drawing.Font("Arial", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_reload.Location = new System.Drawing.Point(965, 366);
+            this.button_reload.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_reload.Name = "button_reload";
+            this.button_reload.Size = new System.Drawing.Size(438, 58);
+            this.button_reload.TabIndex = 12;
+            this.button_reload.Text = "Обновить";
+            this.button_reload.UseVisualStyleBackColor = false;
             // 
             // AdminPeople
             // 
@@ -273,5 +287,6 @@
         private System.Windows.Forms.ToolStripMenuItem товарыToolStripMenuItem;
         private System.Windows.Forms.Panel panelAdminPeople;
         private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Button button_reload;
     }
 }

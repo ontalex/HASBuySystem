@@ -40,6 +40,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.button_reload = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableBox)).BeginInit();
             this.SuspendLayout();
@@ -165,12 +166,25 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Производители";
             // 
+            // button_reload
+            // 
+            this.button_reload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
+            this.button_reload.Font = new System.Drawing.Font("Arial", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_reload.Location = new System.Drawing.Point(1052, 483);
+            this.button_reload.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_reload.Name = "button_reload";
+            this.button_reload.Size = new System.Drawing.Size(388, 58);
+            this.button_reload.TabIndex = 24;
+            this.button_reload.Text = "Обновить";
+            this.button_reload.UseVisualStyleBackColor = false;
+            // 
             // Manufacturers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1482, 700);
+            this.Controls.Add(this.button_reload);
             this.Controls.Add(this.add);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.textBox1);
@@ -204,5 +218,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button_reload;
     }
 }
