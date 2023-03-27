@@ -30,12 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tableBox = new System.Windows.Forms.DataGridView();
-            this.inputLogin = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.inputPass = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.inputRule = new System.Windows.Forms.TextBox();
             this.delete = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.таблицыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,69 +70,6 @@
             this.tableBox.RowTemplate.Height = 24;
             this.tableBox.Size = new System.Drawing.Size(936, 563);
             this.tableBox.TabIndex = 1;
-            // 
-            // inputLogin
-            // 
-            this.inputLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.inputLogin.Font = new System.Drawing.Font("Arial", 14.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inputLogin.Location = new System.Drawing.Point(965, 111);
-            this.inputLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.inputLogin.Name = "inputLogin";
-            this.inputLogin.Size = new System.Drawing.Size(438, 36);
-            this.inputLogin.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(961, 81);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 26);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Логин";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(963, 184);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 26);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Пароль";
-            // 
-            // inputPass
-            // 
-            this.inputPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.inputPass.Font = new System.Drawing.Font("Arial", 14.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inputPass.Location = new System.Drawing.Point(967, 213);
-            this.inputPass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.inputPass.Name = "inputPass";
-            this.inputPass.Size = new System.Drawing.Size(438, 36);
-            this.inputPass.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(964, 282);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 26);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Роль";
-            // 
-            // inputRule
-            // 
-            this.inputRule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.inputRule.Font = new System.Drawing.Font("Arial", 14.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inputRule.Location = new System.Drawing.Point(968, 312);
-            this.inputRule.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.inputRule.Name = "inputRule";
-            this.inputRule.Size = new System.Drawing.Size(438, 36);
-            this.inputRule.TabIndex = 3;
             // 
             // delete
             // 
@@ -209,12 +140,6 @@
             this.panelAdminPeople.Controls.Add(this.delete);
             this.panelAdminPeople.Controls.Add(this.label1);
             this.panelAdminPeople.Controls.Add(this.tableBox);
-            this.panelAdminPeople.Controls.Add(this.inputLogin);
-            this.panelAdminPeople.Controls.Add(this.label4);
-            this.panelAdminPeople.Controls.Add(this.label2);
-            this.panelAdminPeople.Controls.Add(this.inputRule);
-            this.panelAdminPeople.Controls.Add(this.label3);
-            this.panelAdminPeople.Controls.Add(this.inputPass);
             this.panelAdminPeople.Location = new System.Drawing.Point(13, 47);
             this.panelAdminPeople.Name = "panelAdminPeople";
             this.panelAdminPeople.Size = new System.Drawing.Size(1407, 565);
@@ -272,12 +197,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView tableBox;
-        private System.Windows.Forms.TextBox inputLogin;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox inputPass;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox inputRule;
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem таблицыToolStripMenuItem;
