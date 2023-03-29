@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Формы.Окна_кассира;
 
 namespace WindowsFormsApp1.Формы
 {
@@ -23,11 +24,15 @@ namespace WindowsFormsApp1.Формы
         private void чекиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Переход в таблицу с чеками
+            this.Hide();
+            new Receipts().Show();
         }
 
         private void товарыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Переход в таблицу с товарами
+            this.Hide();
+            new ProductsCashir().Show();
         }
 
         private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)

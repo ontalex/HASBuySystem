@@ -97,6 +97,18 @@
     <Compile Include="Формы\Suppliers.Designer.cs">
       <DependentUpon>Suppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Формы\Окна кассира\ProductsCashir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Формы\Окна кассира\ProductsCashir.Designer.cs">
+      <DependentUpon>ProductsCashir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Формы\Окна кассира\Receipts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Формы\Окна кассира\Receipts.Designer.cs">
+      <DependentUpon>Receipts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Формы\Сashier.cs">
       <SubType>Form</SubType>
     </Compile>
