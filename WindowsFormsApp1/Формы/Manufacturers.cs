@@ -139,6 +139,8 @@ namespace WindowsFormsApp1.Формы
             string name = tableBox.Rows[index].Cells[1].Value.ToString();
             string inn = tableBox.Rows[index].Cells[2].Value.ToString();
 
+            MessageBox.Show($"{id} = {name} = {inn}");
+
             // Соединение
             string conString = @"Provider=Microsoft.ACE.Oledb.12.0;Data Source=C:\Users\AlexB\source\repos\WindowsFormsApp1\WindowsFormsApp1\Resources\DB.mdb";
             OleDbConnection con = new OleDbConnection(conString);
