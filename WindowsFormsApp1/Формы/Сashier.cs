@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,11 +16,18 @@ namespace WindowsFormsApp1.Формы
     public partial class Сashier : Form
     {
         string id_user;
+        int count_sessions = 1;
 
         public Сashier(string id)
         {
-            InitializeComponent();
             id_user = id;
+            InitializeComponent();
+
+            counter_sessions.Text = count_sessions.ToString();
+
+            tableBox.Columns.Add("id_product", "ID Товар");
+            tableBox.Columns.Add("name", "Имя");
+            tableBox.Columns.Add("cost", "Стоимость");
         }
 
         private void чекиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,9 +52,39 @@ namespace WindowsFormsApp1.Формы
         private void btn_add_Click(object sender, EventArgs e)
         {
             // Кнопка добавить позицию товара
+            // Получить данные из формы
+            string id_product = input_id_product.Text;
             // Сделать запрос
+            // Соединение
+            string conString = @"Provider=Microsoft.ACE.Oledb.12.0;Data Source=C:\Users\AlexB\source\repos\WindowsFormsApp1\WindowsFormsApp1\Resources\DB.mdb";
+            OleDbConnection con = new OleDbConnection(conString);
+
+            // Запрос к БД
+            con.Open();
+            string str = $"SELECT id_товар, Имя, Стоимость FROM Товары WHERE id_товар={id_product}";
+            OleDbCommand cmd = new OleDbCommand(str, con);
             // Получить необходимые данные
+            OleDbDataReader reader = cmd.ExecuteReader(); // Read data
+            
+            OleDbDataAdapter dataAdapter = new OleDbDataAdapter(str, con);
+
             // Записать данныхе в таблицу
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds, "товар");
+
+            // Проверяем данные
+            if (reader.HasRows == false)
+            {
+                MessageBox.Show("Данные не найдены", "Ошибка!");
+            }
+            else
+            {
+                while (reader.Read())
+                {
+                    // tableBox.DataSource = ds.Tables[0].DefaultView;
+                    tableBox.Rows.Add(ds.Tables[0].);
+                }
+            }
         }
 
         private void btn_del_Click(object sender, EventArgs e)

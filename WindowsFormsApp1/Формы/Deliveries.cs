@@ -218,6 +218,7 @@ namespace WindowsFormsApp1.Формы
                 while (reader.Read())
                 {
                     tableBox.DataSource = ds.Tables[0].DefaultView;
+                    tableBox.Rows.Add(ds.Tables[0].DefaultView);
                 }
             }
 

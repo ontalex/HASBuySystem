@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using WindowsFormsApp1.Формы;
 
 namespace WindowsFormsApp1
 {
@@ -32,7 +33,7 @@ namespace WindowsFormsApp1
             cmd = new OleDbCommand();
             con.Open();
             cmd.Connection = con;
-            string str = "SELECT должность FROM users WHERE логин='" + usr + "' AND пароль='" + psw + "'";
+            string str = "SELECT должность, id_сотрудник FROM users WHERE логин='" + usr + "' AND пароль='" + psw + "'";
             cmd.CommandText = str;
 
             AdminPeople winAP = new AdminPeople();
@@ -51,7 +52,10 @@ namespace WindowsFormsApp1
                 if (dt.Rows[0][0].ToString().ToLower() == "кассир")
                 {
                     MessageBox.Show("Вы - Кассир");
+                    MessageBox.Show(dt.Rows[0][1].ToString());
+                    new Сashier(dt.Rows[0][1].ToString()).Show();
                 }
+
             }
             else
             {
