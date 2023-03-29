@@ -17,6 +17,8 @@ namespace WindowsFormsApp1.Формы
     {
         string id_user;
         int count_sessions = 1;
+        int count_products = 0;
+        int cost_sum = 0;
 
         public Сashier(string id)
         {
@@ -65,12 +67,6 @@ namespace WindowsFormsApp1.Формы
             OleDbCommand cmd = new OleDbCommand(str, con);
             // Получить необходимые данные
             OleDbDataReader reader = cmd.ExecuteReader(); // Read data
-            
-            OleDbDataAdapter dataAdapter = new OleDbDataAdapter(str, con);
-
-            // Записать данныхе в таблицу
-            DataSet ds = new DataSet();
-            dataAdapter.Fill(ds, "товар");
 
             // Проверяем данные
             if (reader.HasRows == false)
@@ -81,10 +77,22 @@ namespace WindowsFormsApp1.Формы
             {
                 while (reader.Read())
                 {
-                    // tableBox.DataSource = ds.Tables[0].DefaultView;
-                    tableBox.Rows.Add(ds.Tables[0].);
+                    tableBox.Rows.Add(reader[0].ToString(), reader[1].ToString(), reader[2].ToString());
+                    
+                    // обновляем колличесво продуктов в корзине
+                    count_products = count_products + 1;
+                    counter_products.Text = count_products.ToString();
+
+                    // обновляем итоговую сумму
+                    cost_sum = cost_sum + int.Parse(reader[2].ToString());
+                    counter_cost.Text = cost_sum.ToString();
                 }
             }
+
+            // Закрытваем соединения
+            con.Close();
+            cmd.Dispose();
+            reader.Close();
         }
 
         private void btn_del_Click(object sender, EventArgs e)
