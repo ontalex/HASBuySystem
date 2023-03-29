@@ -53,10 +53,15 @@ namespace WindowsFormsApp1.Формы
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            // Кнопка добавить позицию товара
-            // Получить данные из формы
+            // проверить оле на пустоту
+            if(input_id_product.Text == "")
+            {
+                MessageBox.Show("Введите значение в поле!", "Внимание!");
+                return;
+            }
+
             string id_product = input_id_product.Text;
-            // Сделать запрос
+
             // Соединение
             string conString = @"Provider=Microsoft.ACE.Oledb.12.0;Data Source=C:\Users\AlexB\source\repos\WindowsFormsApp1\WindowsFormsApp1\Resources\DB.mdb";
             OleDbConnection con = new OleDbConnection(conString);
@@ -93,12 +98,40 @@ namespace WindowsFormsApp1.Формы
             con.Close();
             cmd.Dispose();
             reader.Close();
+
+            input_id_product.Text = string.Empty;
         }
 
         private void btn_del_Click(object sender, EventArgs e)
         {
-            // Проверка на выделение строки
-            // Удалить из таблицы строку 
+            // Проверка на колличество выбранных строк
+            if (tableBox.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Выберите одну сторку!", "Внимание!");
+                return;
+            }
+
+            int index = tableBox.SelectedRows[0].Index;
+
+            if (tableBox.Rows[index].Cells[0].Value == null)
+            {
+                MessageBox.Show("Не все данных введены!", "Внимание!");
+                return;
+            }
+            
+            tableBox.Rows.RemoveAt(index);
+
+            // обновляем колличесво продуктов в корзине
+            count_products = count_products - 1;
+            counter_products.Text = count_products.ToString();
+
+            // обновляем итоговую сумму
+            cost_sum = 0;
+            for (int i = 0; i < tableBox.Rows.Count-1; i++)
+            {
+                cost_sum = cost_sum + int.Parse(tableBox.Rows[i].Cells[2].Value.ToString());
+            }
+            counter_cost.Text = cost_sum.ToString();
         }
 
         private void btn_end_Click(object sender, EventArgs e)
