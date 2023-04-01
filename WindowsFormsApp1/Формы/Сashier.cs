@@ -164,12 +164,16 @@ namespace WindowsFormsApp1.Формы
                         }
                         conEnd.Close();
 
-                        // Обновить сессию
+                        // Обновить данные на фронте
+                        count_sessions = count_sessions + 1;
+                        count_products = 0;
+                        cost_sum = 0;
 
-                        // Стереть данные из поля, таблицы
+                        counter_cost.Text = cost_sum.ToString();
+                        counter_products.Text = count_products.ToString();
+                        counter_sessions.Text =count_sessions.ToString();
 
-                        // Обнулить счётчик позиций, сумму чека
-
+                        tableBox.Rows.Clear();
                 }
         }
 }
