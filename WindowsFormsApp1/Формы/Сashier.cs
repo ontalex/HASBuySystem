@@ -129,7 +129,8 @@ namespace WindowsFormsApp1.Формы
                 private void btn_end_Click(object sender, EventArgs e)
                 {
                         OleDbDataReader reader;
-                        int chequeLastID, saleLastID;
+                        int saleLastID = int.Parse(DateTimeOffset.Now.ToUnixTimeSeconds().ToString());
+                        string chequeLastID = DateTimeOffset.Now.ToUnixTimeSeconds().ToString();
 
                         // Проверить наличие данных в таблице (или проверить счётчик позиций)
                         if (count_products== 0) {
@@ -137,26 +138,13 @@ namespace WindowsFormsApp1.Формы
                                 return; 
                         }
 
-                        // Войти в цикл отправки пакета данных в БД
+                        // открываем соедиение с БД
                         string conString = @"Provider=Microsoft.ACE.Oledb.12.0;Data Source=C:\Users\AlexB\source\repos\WindowsFormsApp1\WindowsFormsApp1\Resources\DB.mdb";
                         OleDbConnection conEnd = new OleDbConnection(conString);
-
                         conEnd.Open();
 
-                        // Запрос на получение последенего ID
-                        // string sqlChequeLastID = "SELECT MAX(id_чек) FROM Чеки";
-                        string sqlChequeLastID = "SELECT id_чек FROM Чеки WHERE id_чек = (SELECT MAX(id_чек) FROM Чеки)";
-                        OleDbCommand cmdChequeLastID = new OleDbCommand(sqlChequeLastID, conEnd);
-                        if (cmdChequeLastID.ExecuteNonQuery() != 1)
-                        {
-                                MessageBox.Show("cmdChequeLastID errror SQL Reqvest", "Ошибка!");
-                                return;
-                        }
-                        reader = cmdChequeLastID.ExecuteReader();
-                        chequeLastID = int.Parse(reader[0].ToString());
-
-
-                        string sqlСhequeCreate = $"INSERT INTO Чеки VALUES ({chequeLastID+1}, {id_user}, {cost_sum}, {DateTime.Now.ToString("H:mm:ss")})";
+                        // формирование чека и отправка в БД
+                        string sqlСhequeCreate = $"INSERT INTO Чеки VALUES ({chequeLastID}, {id_user}, {cost_sum}, '{DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}')";
                         OleDbCommand cmdСhequeCreate = new OleDbCommand(sqlСhequeCreate, conEnd);
                         if (cmdСhequeCreate.ExecuteNonQuery() != 1)
                         {
@@ -164,22 +152,9 @@ namespace WindowsFormsApp1.Формы
                                 return;
                         }
 
-
-                        // Запрос на получение полседней продажи
-                        string sqlSaleLastID = $"SELECT MAX(id_продажа) FROM Продажи";
-                        OleDbCommand cmdSaleLastID = new OleDbCommand(sqlSaleLastID, conEnd);
-                        if (cmdSaleLastID.ExecuteNonQuery() != 1)
-                        {
-                                MessageBox.Show("cmdSaleLastID errror SQL Reqvest", "Ошибка!");
-                                return;
-                        }
-                        reader = cmdSaleLastID.ExecuteReader();
-                        saleLastID = int.Parse(reader[0].ToString());
-
-
-                        // Обернуть в цикл обхода таблицы для создания 
-                        for(int i = 0; i < tableBox.Rows.Count; i++) {
-                                string sqlSaleCreate = $"INSERT INTO Продажи VALUES ({saleLastID+i}, {int.Parse(tableBox.Rows[i].Cells[0].Value.ToString())}, {chequeLastID+1})";
+                        // цикл записи продаж в БД
+                        for(int i = 0; i < tableBox.Rows.Count - 1; i++) {
+                                string sqlSaleCreate = $"INSERT INTO Продажи VALUES ({saleLastID+i}, {tableBox.Rows[i].Cells[0].Value.ToString()}, {chequeLastID})";
                                 OleDbCommand cmdSaleCreate = new OleDbCommand(sqlSaleCreate, conEnd);
                                 if (cmdSaleCreate.ExecuteNonQuery() != 1)
                                 {
@@ -187,11 +162,14 @@ namespace WindowsFormsApp1.Формы
                                         return;
                                 }
                         }
-
+                        conEnd.Close();
 
                         // Обновить сессию
+
                         // Стереть данные из поля, таблицы
+
                         // Обнулить счётчик позиций, сумму чека
+
                 }
         }
 }
