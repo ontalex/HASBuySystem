@@ -35,7 +35,6 @@ namespace WindowsFormsApp1.Формы.Окна_кассира
                 private void кассаToolStripMenuItem_Click(object sender, System.EventArgs e)
                 {
                         this.Hide();
-                        new WindowsFormsApp1.Формы.Окна_кассира.Сashier(id_user).Show();
                 }
 
                 private void товарыToolStripMenuItem_Click(object sender, System.EventArgs e)

@@ -19,17 +19,19 @@ namespace WindowsFormsApp1.Формы.Окна_кассира
                         // Запрос к БД
                         con.Open();
                         string str = $"SELECT id_товар, Имя, Стоимость FROM Товары";
-                        OleDbCommand cmd = new OleDbCommand(str, con);
 
-                        // Получить необходимые данные
-                        // OleDbDataReader reader = cmd.ExecuteReader(); // Read data
+                        OleDbDataAdapter adapter = new OleDbDataAdapter(str, con);
 
+                        DataSet dataSet = new DataSet();
+
+                        adapter.Fill(dataSet, "Товары");
+
+                        tableBox.DataSource = dataSet.Tables[0].DefaultView;
                 }
 
                 private void кассаToolStripMenuItem_Click(object sender, System.EventArgs e)
                 {
                         this.Hide();
-                        new WindowsFormsApp1.Формы.Окна_кассира.Сashier(id_user).Show();
                 }
 
                 private void чекиToolStripMenuItem_Click(object sender, System.EventArgs e)
