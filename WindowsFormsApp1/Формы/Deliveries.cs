@@ -119,7 +119,8 @@ namespace WindowsFormsApp1.Формы
 
                         // Запрос к БД
                         con.Open();
-                        string str = $"INSERT INTO Поставки VALUES ({id}, {id_manufactur}, {id_supplier}, {date})";
+                        // string str = $"INSERT INTO Поставки VALUES ({id}, {id_manufactur}, {id_supplier}, {date})";
+                        string str = $"INSERT INTO Поставки VALUES ({id}, {id_manufactur}, {id_supplier}, '{DateTime.Parse(date).ToString("yyyy-MM-dd hh:mm:ss")}')";
                         OleDbCommand cmd = new OleDbCommand(str, con);
 
                         // Выполняем запрос
@@ -209,11 +210,7 @@ namespace WindowsFormsApp1.Формы
                         }
                         else
                         {
-                                while (reader.Read())
-                                {
-                                        tableBox.DataSource = ds.Tables[0].DefaultView;
-                                        tableBox.Rows.Add(ds.Tables[0].DefaultView);
-                                }
+                                tableBox.DataSource = ds.Tables[0].DefaultView;
                         }
 
                         reader.Close();
