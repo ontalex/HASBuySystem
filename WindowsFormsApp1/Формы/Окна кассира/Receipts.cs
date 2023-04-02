@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Data;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Формы.Окна_кассира
 {
@@ -19,5 +20,9 @@ namespace WindowsFormsApp1.Формы.Окна_кассира
                         this.Hide();
                 }
 
+                private void search_input_TextChanged(object sender, System.EventArgs e)
+                {
+                        (tableBox.DataSource as DataTable).DefaultView.RowFilter = $"id_чек LIKE '%{search_input.Text}%' ";
+                }
         }
 }

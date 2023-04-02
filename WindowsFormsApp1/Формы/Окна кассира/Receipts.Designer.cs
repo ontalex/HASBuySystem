@@ -97,6 +97,7 @@
                         this.search_input.Name = "search_input";
                         this.search_input.Size = new System.Drawing.Size(1132, 36);
                         this.search_input.TabIndex = 17;
+                        this.search_input.TextChanged += new System.EventHandler(this.search_input_TextChanged);
                         // 
                         // Receipts
                         // 

@@ -46,7 +46,7 @@
             this.чекиToolStripMenuItem});
                         this.menuStrip1.Location = new System.Drawing.Point(0, 0);
                         this.menuStrip1.Name = "menuStrip1";
-                        this.menuStrip1.Size = new System.Drawing.Size(1262, 28);
+                        this.menuStrip1.Size = new System.Drawing.Size(1262, 30);
                         this.menuStrip1.TabIndex = 0;
                         this.menuStrip1.Text = "menuStrip1";
                         // 
@@ -97,6 +97,7 @@
                         this.search_input.Name = "search_input";
                         this.search_input.Size = new System.Drawing.Size(1072, 36);
                         this.search_input.TabIndex = 19;
+                        this.search_input.TextChanged += new System.EventHandler(this.search_input_TextChanged);
                         // 
                         // ProductsCashir
                         // 
@@ -110,7 +111,7 @@
                         this.Controls.Add(this.menuStrip1);
                         this.MainMenuStrip = this.menuStrip1;
                         this.Name = "ProductsCashir";
-                        this.Text = "ProductsCashir";
+                        this.Text = "\\";
                         this.menuStrip1.ResumeLayout(false);
                         this.menuStrip1.PerformLayout();
                         ((System.ComponentModel.ISupportInitialize)(this.tableBox)).EndInit();
