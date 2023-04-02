@@ -21,9 +21,5 @@ namespace WindowsFormsApp1.Формы.Окна_кассира
 
                 }
 
-                private void search_btn_Click(object sender, System.EventArgs e)
-                {
-
-                }
         }
 }

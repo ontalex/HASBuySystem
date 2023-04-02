@@ -33,7 +33,6 @@
                         this.чекиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                         this.tableBox = new System.Windows.Forms.DataGridView();
                         this.label3 = new System.Windows.Forms.Label();
-                        this.search_btn = new System.Windows.Forms.Button();
                         this.search_input = new System.Windows.Forms.TextBox();
                         this.menuStrip1.SuspendLayout();
                         ((System.ComponentModel.ISupportInitialize)(this.tableBox)).BeginInit();
@@ -90,26 +89,13 @@
                         this.label3.TabIndex = 14;
                         this.label3.Text = "Продукты";
                         // 
-                        // search_btn
-                        // 
-                        this.search_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(163)))), ((int)(((byte)(241)))));
-                        this.search_btn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-                        this.search_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-                        this.search_btn.Location = new System.Drawing.Point(1139, 54);
-                        this.search_btn.Name = "search_btn";
-                        this.search_btn.Size = new System.Drawing.Size(110, 44);
-                        this.search_btn.TabIndex = 20;
-                        this.search_btn.Text = "ПОИСК";
-                        this.search_btn.UseVisualStyleBackColor = false;
-                        this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
-                        // 
                         // search_input
                         // 
                         this.search_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
                         this.search_input.Font = new System.Drawing.Font("Arial", 14.8F);
                         this.search_input.Location = new System.Drawing.Point(177, 58);
                         this.search_input.Name = "search_input";
-                        this.search_input.Size = new System.Drawing.Size(956, 36);
+                        this.search_input.Size = new System.Drawing.Size(1072, 36);
                         this.search_input.TabIndex = 19;
                         // 
                         // ProductsCashir
@@ -118,7 +104,6 @@
                         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
                         this.BackColor = System.Drawing.Color.White;
                         this.ClientSize = new System.Drawing.Size(1262, 673);
-                        this.Controls.Add(this.search_btn);
                         this.Controls.Add(this.search_input);
                         this.Controls.Add(this.label3);
                         this.Controls.Add(this.tableBox);
@@ -141,7 +126,6 @@
                 private System.Windows.Forms.ToolStripMenuItem чекиToolStripMenuItem;
                 private System.Windows.Forms.DataGridView tableBox;
                 private System.Windows.Forms.Label label3;
-                private System.Windows.Forms.Button search_btn;
                 private System.Windows.Forms.TextBox search_input;
         }
 }
