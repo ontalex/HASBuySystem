@@ -33,7 +33,6 @@
                         this.товарыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                         this.tableBox = new System.Windows.Forms.DataGridView();
                         this.label3 = new System.Windows.Forms.Label();
-                        this.search_input = new System.Windows.Forms.TextBox();
                         this.menuStrip1.SuspendLayout();
                         ((System.ComponentModel.ISupportInitialize)(this.tableBox)).BeginInit();
                         this.SuspendLayout();
@@ -53,14 +52,14 @@
                         // кассаToolStripMenuItem
                         // 
                         this.кассаToolStripMenuItem.Name = "кассаToolStripMenuItem";
-                        this.кассаToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
+                        this.кассаToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
                         this.кассаToolStripMenuItem.Text = "Касса";
                         this.кассаToolStripMenuItem.Click += new System.EventHandler(this.кассаToolStripMenuItem_Click);
                         // 
                         // товарыToolStripMenuItem
                         // 
                         this.товарыToolStripMenuItem.Name = "товарыToolStripMenuItem";
-                        this.товарыToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
+                        this.товарыToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
                         this.товарыToolStripMenuItem.Text = "Товары";
                         this.товарыToolStripMenuItem.Click += new System.EventHandler(this.товарыToolStripMenuItem_Click);
                         // 
@@ -89,29 +88,18 @@
                         this.label3.TabIndex = 13;
                         this.label3.Text = "Чеки";
                         // 
-                        // search_input
-                        // 
-                        this.search_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-                        this.search_input.Font = new System.Drawing.Font("Arial", 14.8F);
-                        this.search_input.Location = new System.Drawing.Point(117, 57);
-                        this.search_input.Name = "search_input";
-                        this.search_input.Size = new System.Drawing.Size(1132, 36);
-                        this.search_input.TabIndex = 17;
-                        this.search_input.TextChanged += new System.EventHandler(this.search_input_TextChanged);
-                        // 
                         // Receipts
                         // 
                         this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
                         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
                         this.BackColor = System.Drawing.Color.White;
                         this.ClientSize = new System.Drawing.Size(1262, 673);
-                        this.Controls.Add(this.search_input);
                         this.Controls.Add(this.label3);
                         this.Controls.Add(this.tableBox);
                         this.Controls.Add(this.menuStrip1);
                         this.MainMenuStrip = this.menuStrip1;
                         this.Name = "Receipts";
-                        this.Text = "Receipts";
+                        this.Text = "Таблица Чеков";
                         this.menuStrip1.ResumeLayout(false);
                         this.menuStrip1.PerformLayout();
                         ((System.ComponentModel.ISupportInitialize)(this.tableBox)).EndInit();
@@ -127,6 +115,5 @@
                 private System.Windows.Forms.ToolStripMenuItem товарыToolStripMenuItem;
                 private System.Windows.Forms.DataGridView tableBox;
                 private System.Windows.Forms.Label label3;
-                private System.Windows.Forms.TextBox search_input;
         }
 }

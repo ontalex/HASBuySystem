@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data.OleDb;
 using System.Windows.Forms;
-using WindowsFormsApp1.Формы.Окна_кассира;
+// using WindowsFormsApp1.Формы.Окна_кассира;
 
-namespace WindowsFormsApp1.Формы
+namespace WindowsFormsApp1.Формы.Окна_кассира
 {
         public partial class Сashier : Form
         {
@@ -27,21 +27,19 @@ namespace WindowsFormsApp1.Формы
                 private void чекиToolStripMenuItem_Click(object sender, EventArgs e)
                 {
                         // Переход в таблицу с чеками
-                        this.Hide();
-                        new Receipts().Show();
+                        new Receipts(id_user).Show();
                 }
 
                 private void товарыToolStripMenuItem_Click(object sender, EventArgs e)
                 {
                         // Переход в таблицу с товарами
-                        this.Hide();
-                        new ProductsCashir().Show();
+                        new ProductsCashir(id_user).Show();
                 }
 
                 private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
                 {
                         // Выйти из аккаунта
-
+                        this.Hide();
                 }
 
                 private void btn_add_Click(object sender, EventArgs e)

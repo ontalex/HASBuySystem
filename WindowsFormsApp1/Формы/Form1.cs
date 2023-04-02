@@ -44,9 +44,7 @@ namespace WindowsFormsApp1
                                 }
                                 if (dt.Rows[0][0].ToString().ToLower() == "кассир")
                                 {
-                                        MessageBox.Show("Вы - Кассир");
-                                        MessageBox.Show(dt.Rows[0][1].ToString());
-                                        new Сashier(dt.Rows[0][1].ToString()).Show();
+                                        new WindowsFormsApp1.Формы.Окна_кассира.Сashier(dt.Rows[0][1].ToString()).Show();
                                 }
 
                         }

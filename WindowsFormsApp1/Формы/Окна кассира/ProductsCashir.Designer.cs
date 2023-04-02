@@ -33,7 +33,6 @@
                         this.чекиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                         this.tableBox = new System.Windows.Forms.DataGridView();
                         this.label3 = new System.Windows.Forms.Label();
-                        this.search_input = new System.Windows.Forms.TextBox();
                         this.menuStrip1.SuspendLayout();
                         ((System.ComponentModel.ISupportInitialize)(this.tableBox)).BeginInit();
                         this.SuspendLayout();
@@ -46,21 +45,21 @@
             this.чекиToolStripMenuItem});
                         this.menuStrip1.Location = new System.Drawing.Point(0, 0);
                         this.menuStrip1.Name = "menuStrip1";
-                        this.menuStrip1.Size = new System.Drawing.Size(1262, 30);
+                        this.menuStrip1.Size = new System.Drawing.Size(1262, 28);
                         this.menuStrip1.TabIndex = 0;
                         this.menuStrip1.Text = "menuStrip1";
                         // 
                         // кассаToolStripMenuItem
                         // 
                         this.кассаToolStripMenuItem.Name = "кассаToolStripMenuItem";
-                        this.кассаToolStripMenuItem.Size = new System.Drawing.Size(60, 26);
+                        this.кассаToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
                         this.кассаToolStripMenuItem.Text = "касса";
                         this.кассаToolStripMenuItem.Click += new System.EventHandler(this.кассаToolStripMenuItem_Click);
                         // 
                         // чекиToolStripMenuItem
                         // 
                         this.чекиToolStripMenuItem.Name = "чекиToolStripMenuItem";
-                        this.чекиToolStripMenuItem.Size = new System.Drawing.Size(57, 26);
+                        this.чекиToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
                         this.чекиToolStripMenuItem.Text = "Чеки";
                         this.чекиToolStripMenuItem.Click += new System.EventHandler(this.чекиToolStripMenuItem_Click);
                         // 
@@ -89,29 +88,18 @@
                         this.label3.TabIndex = 14;
                         this.label3.Text = "Продукты";
                         // 
-                        // search_input
-                        // 
-                        this.search_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-                        this.search_input.Font = new System.Drawing.Font("Arial", 14.8F);
-                        this.search_input.Location = new System.Drawing.Point(177, 58);
-                        this.search_input.Name = "search_input";
-                        this.search_input.Size = new System.Drawing.Size(1072, 36);
-                        this.search_input.TabIndex = 19;
-                        this.search_input.TextChanged += new System.EventHandler(this.search_input_TextChanged);
-                        // 
                         // ProductsCashir
                         // 
                         this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
                         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
                         this.BackColor = System.Drawing.Color.White;
                         this.ClientSize = new System.Drawing.Size(1262, 673);
-                        this.Controls.Add(this.search_input);
                         this.Controls.Add(this.label3);
                         this.Controls.Add(this.tableBox);
                         this.Controls.Add(this.menuStrip1);
                         this.MainMenuStrip = this.menuStrip1;
                         this.Name = "ProductsCashir";
-                        this.Text = "\\";
+                        this.Text = "Таблица товаров";
                         this.menuStrip1.ResumeLayout(false);
                         this.menuStrip1.PerformLayout();
                         ((System.ComponentModel.ISupportInitialize)(this.tableBox)).EndInit();
@@ -127,6 +115,5 @@
                 private System.Windows.Forms.ToolStripMenuItem чекиToolStripMenuItem;
                 private System.Windows.Forms.DataGridView tableBox;
                 private System.Windows.Forms.Label label3;
-                private System.Windows.Forms.TextBox search_input;
         }
 }

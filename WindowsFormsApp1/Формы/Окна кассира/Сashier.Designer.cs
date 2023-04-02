@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1.Формы
+﻿namespace WindowsFormsApp1.Формы.Окна_кассира
 {
         partial class Сashier
         {
