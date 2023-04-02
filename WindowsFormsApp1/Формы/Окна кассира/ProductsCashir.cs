@@ -8,5 +8,22 @@ namespace WindowsFormsApp1.Формы.Окна_кассира
                 {
                         InitializeComponent();
                 }
+
+                private void кассаToolStripMenuItem_Click(object sender, System.EventArgs e)
+                {
+                        this.Hide();
+
+                }
+
+                private void чекиToolStripMenuItem_Click(object sender, System.EventArgs e)
+                {
+                        this.Hide();
+
+                }
+
+                private void search_btn_Click(object sender, System.EventArgs e)
+                {
+
+                }
         }
 }
